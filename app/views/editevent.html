@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block title %}Ridr | Event{% endblock %}
+{% block body_class %}home{% endblock %}
+{% block content %}
+<div class="edit_event">
+		<h2> Edit Event </h2>
+		<form action="/" method="POST">
+		<p><input type="text" name="event_name" placeholder="Event Name"></p>
+		<p><input type="text" name="destination" placeholder="Destination"></p>
+ 		<p><input type="text" name="origin" placeholder="Origin"></p>
+ 		<p><input type="text" name="date" placeholder="Event Date"></p>
+ 		<p><input type="text" name="time" placeholder="Time"></p>
+ 		<p><input type="text" name="seats_available" placeholder="Seats Available"></p>
+ 		<p><input type="text" name="vehicle" placeholder="vehicle type"></p>
+ 		<button type="submit">Update Event</button>
+ 		<button type="submit">Delete Event</button>
+ 		</form>
+</div>
+
+{% endblock %}

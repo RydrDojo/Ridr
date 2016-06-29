@@ -50,3 +50,11 @@ display: inline-block;
 margin-left: 100px;
 
 }
+.googlemap , .user_event{ 
+display: inline-block;
+border: 1px solid black;
+ }
+ .fa-cogs {
+ 	font-size: 5rem;
+
+ }

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block title %}Ridr | Event{% endblock %}
+{% block body_class %}home{% endblock %}
+{% block content %}
+{%if events%}
+	<div class="event_creation">
+		<form action="/" method="POST">
+		<p><input type="text" name="event_name" placeholder="Event Name"></p>
+		<p><input type="text" name="destination" placeholder="Destination"></p>
+ 		<p><input type="text" name="origin" placeholder="Origin"></p>
+ 		<p><input type="text" name="date" placeholder="Event Date"></p>
+ 		<p><input type="text" name="time" placeholder="Time"></p>
+ 		<p><input type="text" name="seats_available" placeholder="Seats Available"></p>
+ 		<p><input type="text" name="vehicle" placeholder="vehicle type"></p>
+ 		<button type="submit">Create Event</button>
+ 		</form>
+	</div>
+{%elif event%}
+<div class="events_list">
+	<form action="">
+<!-- 	loop through the events
+ -->	<ul class="events_ul">
+		<li>Ride Information/Event Name:</li>
+		<li>Location: </li>
+		<li>Departing From: </li>
+		<li>Driver Name: </li>
+		<li>Driver Rating: </li>
+		<li>Seats Available: </li>
+		<li><a href="join"><button>Join</button></a></li>
+
+	</ul>
+		
+	</form>
+</div>
+{%else%}
+<div class="event_search">
+	<form action="/" method="POST">
+<!-- 	<label>Event Name: </label>
+ -->	<p><input type="text" name="destination" placeholder="Destination"></p>
+ 		<p><input type="text" name="origin" placeholder="Leaving From"></p>
+ 		<p><input type="text" name="date" placeholder="Date"></p>
+ 		<input type="submit" value="Submit"></input>
+	</form>
+</div>
+{%endif%}
+{% endblock %}

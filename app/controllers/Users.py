@@ -9,7 +9,7 @@ class Users(Controller):
 
     # routes['/'] = "Users#index"
     def index(self):
-        return self.load_view('index.html')
+        return self.load_view('editevent.html')
 
     # routes['/login'] = "Users#login"
     def login(self):

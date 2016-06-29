@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block title %}Ridr | Event{% endblock %}
+{% block body_class %}home{% endblock %}
+{% block content %}
+<div class="events_page">
+	<div class="user_event">
+		<img src="sample.png">
+		<h3>Sample Event</h3>
+		<p>When: {{ user_event_time }}</p>
+		<p> Where: {{ user_where}} </p>
+	</div>
+	<div class="googlemap">
+		<h1> Here be Google Maps API</h1>
+	</div>
+	<i class="fa fa-cogs" aria-hidden="true"></i>
+	<hr> 
+	<div class="driver_info">
+		<i class="fa fa-car" aria-hidden="true"></i>
+		<p><h4>Driver Name</h4></p>
+		<p> Driver Bio, Information, and Requirements</p>
+		<i class="fa fa-star" aria-hidden="true"></i>
+		<i class="fa fa-star" aria-hidden="true"></i>
+		<i class="fa fa-star" aria-hidden="true"></i>
+		<i class="fa fa-star" aria-hidden="true"></i>
+		<i class="fa fa-star" aria-hidden="true"></i>
+		<p><i class="fa fa-comments" aria-hidden="true"></i></p>
+		<a href="/message"><button>Message Me</button></a>
+	</div>
+	<div class="passenger_info">
+<!-- 	Loop through for all the passengers
+ -->		<div class="passenger">
+		<i class="fa fa-user" aria-hidden="true"></i>
+		Information about the passenger
+		<i class="fa fa-info-circle" aria-hidden="true"></i>
+		</div>
+	</div>
+
+</div>
+
+
+
+
+
+
+{% endblock %}
