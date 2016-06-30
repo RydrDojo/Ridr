@@ -10,7 +10,7 @@ facebook = OAuth2Service(
     access_token_url='/oauth/access_token',
     authorize_url='https://www.facebook.com/dialog/oauth',
     client_id='259154491127882',
-    client_secret='c5b9a2e1e25bfa25abc75a9cd2af450a',
+    client_secret='############################',
 )
 
 app_id = "259154491127882"
