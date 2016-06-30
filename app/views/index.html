@@ -3,24 +3,85 @@
 {% block body_class %}home{% endblock %}
 {% block content %}
     <div class="home">
-        {{ session['user']['id'] }}
         {%if 'user' in session%}
             {% if 'new_user' in session %}
-                <h1>Hello, {{ session['user']['first_name'] }}! Thanks for signing up.</h1>
-                <h2>We just need a little more info:</h2>
-                <form class="new_user" action="/register/process" method="POST">
-                    <p><input class="form-control" type="email" name="email" placeholder="Email" required></p>
-                    <p><input class="form-control" type="text" name="username" placeholder="Username" required></p>
-                    <p><button type="submit">Continue</button></p>
-                </form>
+                <div class="new_user">
+                    <h1>Hello, {{ session['user']['first_name'] }}! Thanks for signing up.</h1>
+                    <h2>We just need a little more info:</h2>
+                    <form class="new_user" action="/register/process" method="POST">
+                        <p><input type="email" name="email" placeholder="Email" required></p>
+                        <p><input type="text" name="username" placeholder="Username" required></p>
+                        <p><input type="text" name="city" id="city" placeholder="City"></p>
+                        <p><button class="continue" type="submit">Continue</button></p>
+                    </form>
+                </div>
             {% else %}
+                <div class="user_header">
+                    <div class="profile_pic">
+                        <img src="{{ session['user']['picture'] }}" alt="profile picture" class="profile_pic">
+                    </div>
+                    <h1>{{ session['user']['first_name'] }}</h1>
+                </div>
+                <h3>Your Rides</h3>
+                <div class="home_box user_rides">
+                    {% if user_rides %}
+                        {% for ride in user_rides %}
+                            <p></p>
+                        {% endfor %}
+                    {% else %}
+                        <p>Nothing Found Here. <a href="/event/new">Add a Ride?</a></p>
+                    {% endif %}
+                </div>
+                <h3>Inbox</h3>
+                <div class="home_box inbox">
+                    {% if user_messages %}
+                        {% for user_message in user_messages %}
+                            <div class="user_message">
+                                <div class="sender">
 
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>No new messages</p>
+                    {% endif %}
+                </div>
+                <h3>Ratings</h3>
+                <div class="home_box ratings">
+                    {% if user_ratings %}
+                    {% else %}
+                        <p>No ratings</p>
+                    {% endif %}
+                </div>
             {% endif %}
         {%else%}
         <div class="start">
-            <h1>Welcome to Ridr</h1>
-
-            <button><a href="/login">Get Started</a></button>
+            <h1>Welcome to <span class="branding">Ridr</span></h1>
+            <h3>Plan your next trip with ease.</h3>
+            <div class="about">
+                <p>Wherever you're headed, through Ridr you can plan trips with local drivers at the click of a button!</p>
+                <h3>How Ridr Works:</h3>
+                <span class="callout">1</span><p class="callout_p">If you're driving somewhere, plan an event, and get
+                your
+                friends or
+                    other riders on
+                    board!
+                    Take advantage of the carpool lane, share a conversation, or the enjoyment of company.</p>
+                <span class="callout">2</span><p class="callout_p">Don’t feel like driving? Become a rider! Tag along
+                with
+                other
+                    planned
+                    trips from
+                    your
+                    area!</p>
+                <span class="callout">3</span><p class="callout_p">Ridr is a free, ecological, user based web
+                application
+                that can help
+                    your next
+                    trip be
+                    something worthwhile.</p>
+            </div>
+            <a href="/login"><button class="get_started">Get Started</button></a>
         </div>
         {%endif%}
     </div>
@@ -28,5 +89,13 @@
         if (window.location.hash && window.location.hash == '#_=_') {
             window.location.hash = '';
         }
+        jQuery(function($){
+            $(document).ready(function(){
+                $( "#city" ).autocomplete({
+                    source: us_cities,
+                    autoFocus: true
+                });
+            });
+        });
     </script>
 {% endblock %}
