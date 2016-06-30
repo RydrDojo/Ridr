@@ -1,0 +1,10 @@
+*.DS_store
+*.swp
+*.pyc
+venv/*
+pylotVenv/*
+__pycache__/*
+.idea/*
+app/config/database.py*
+database.py
+Users.py
