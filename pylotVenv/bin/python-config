@@ -1,4 +1,4 @@
-#!/Users/josiahrooney/Documents/School/rydr/pylotVenv/bin/python
+#!/home/ubuntu/ridr/pylotVenv/bin/python
 
 import sys
 import getopt

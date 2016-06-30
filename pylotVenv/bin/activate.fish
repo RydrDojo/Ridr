@@ -36,7 +36,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/josiahrooney/Documents/School/rydr/pylotVenv"
+set -gx VIRTUAL_ENV "/home/ubuntu/ridr/pylotVenv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
